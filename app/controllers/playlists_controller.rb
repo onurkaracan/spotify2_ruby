@@ -8,7 +8,7 @@ class PlaylistsController < ApplicationController
 
   # GET /playlists/1 or /playlists/1.json
   def show
-    @playlist = song.find(params[:id])
+    @playlist = Playlist.find(params[:id])
     @song = @playlist.songs
   end
 
@@ -25,8 +25,7 @@ class PlaylistsController < ApplicationController
 
   # POST /playlists or /playlists.json
   def create
-    @playlist = Playlist.new(params[:playlist])
-
+    @playlist = Playlist.new(playlist_params)
 
     respond_to do |format|
       if @playlist.save

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user_has_playlist %>
+
+<div>
+  <%= link_to "Edit this user has playlist", edit_user_has_playlist_path(@user_has_playlist) %> |
+  <%= link_to "Back to user has playlists", user_has_playlists_path %>
+
+  <%= button_to "Destroy this user has playlist", @user_has_playlist, method: :delete %>
+</div>

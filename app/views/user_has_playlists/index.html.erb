@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>User has playlists</h1>
+
+<div id="user_has_playlists">
+  <% @user_has_playlists.each do |user_has_playlist| %>
+    <%= render user_has_playlist %>
+    <p>
+      <%= link_to "Show this user has playlist", user_has_playlist %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New user has playlist", new_user_has_playlist_path %>
