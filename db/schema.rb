@@ -69,14 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_090245) do
     t.index ["user_id"], name: "index_user_has_playlists_on_user_id"
   end
 
-  create_table "user_playlists", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.bigint "playlists_id"
-    t.index ["playlists_id"], name: "index_user_playlists_on_playlists_id"
-    t.index ["users_id"], name: "index_user_playlists_on_users_id"
-  end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "user_name", null: false
@@ -93,6 +85,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_090245) do
   add_foreign_key "songs", "albums", column: "albums_id"
   add_foreign_key "user_has_playlists", "playlists"
   add_foreign_key "user_has_playlists", "users"
-  add_foreign_key "user_playlists", "playlists", column: "playlists_id"
-  add_foreign_key "user_playlists", "users", column: "users_id"
 end
